@@ -1,0 +1,10 @@
+[Plymouth Theme]
+Name=Valavil
+Description=Custom development
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/valavil
+ScriptFile=/usr/share/plymouth/themes/valavil/valavil.script
+
+

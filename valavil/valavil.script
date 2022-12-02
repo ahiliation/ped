@@ -1,0 +1,92 @@
+# This is an example plymouth plugin script
+
+# Load the image of a background
+background_image = Image("default.png");
+
+# Create a sprite of the background
+background_sprite = Sprite(background_image);
+
+# Add your code here
+
+background_image = Image("default.png");
+
+screen_ratio = Window.GetHeight() / Window.GetWidth();
+background_image_ratio = background_image.GetHeight() / background_image.GetWidth();
+
+if (screen_ratio > background_image_ratio)
+  {  # Screen ratio is taller than image ratio, we will match the screen height
+     scale_factor =  Window.GetHeight() / background_image.GetHeight();
+  }
+else
+  {  # Screen ratio is wider than image ratio, we will match the screen width
+     scale_factor =  Window.GetWidth() / background_image.GetWidth();
+  }
+
+scaled_background_image = background_image.Scale(background_image.GetWidth()  * scale_factor,
+                                         background_image.GetHeight() * scale_factor);
+background_sprite = Sprite(scaled_background_image); # Create the a sprite using the scaled image
+
+background_sprite.SetX(Window.GetWidth()  / 2 - scaled_background_image.GetWidth () / 2); # Place in the centre
+background_sprite.SetY(Window.GetHeight() / 2 - scaled_background_image.GetHeight() / 2);
+background_sprite.SetZ(-10000); # Place right at the back
+
+
+
+
+
+
+#fun refresh_callback ()
+#  {
+#    # Currently we do nothing here
+#  }
+  
+#Plymouth.SetRefreshFunction (refresh_callback);
+
+#----------------------------------------- Progress Bar --------------------------------
+
+ # Nice colour on top of the screen fading to
+#Window.SetBackgroundTopColor (0.0, 0.00, 0.0);
+
+# an equally nice colour on the bottom
+#Window.SetBackgroundBottomColor (0.0, 0.00, 0.0);
+
+# Image animation loop
+for (i = 1; i < 8; i++)
+  flyingman_image[i] = Image("progress-" + i + ".png");
+flyingman_sprite = Sprite();
+
+
+flyingman_sprite.SetX(Window.GetWidth() / 2 - flyingman_image[1].GetWidth() / 2); # Place in the centre
+flyingman_sprite.SetY(Window.GetHeight() / 2 - flyingman_image[1].GetHeight() / 2);
+
+progress = 1;
+
+fun refresh_callback ()
+  {
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 3) % 8]);
+    progress++;
+  } 
+   
+Plymouth.SetRefreshFunction (refresh_callback);
+
+#----------------------------------------- Quit --------------------------------
+
+fun quit_callback ()
+{
+}
+
+Plymouth.SetQuitFunction(quit_callback);
+
+#----------------------------------------- Message --------------------------------
+
+message_sprite = Sprite();
+message_sprite.SetPosition(10, 10, 10000);
+
+fun message_callback (text)
+{
+  my_image = Image.Text(text, 1, 1, 1);
+  message_sprite.SetImage(my_image);
+}
+
+Plymouth.SetMessageFunction(message_callback);
+
