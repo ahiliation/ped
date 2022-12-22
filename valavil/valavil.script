@@ -1,5 +1,5 @@
 # Load the image of a background
-background_image = Image("./boot/bootbackground.png");
+background_image = Image("bootbackground.png");
 
 # Create a sprite of the background
 background_sprite = Sprite(background_image);
