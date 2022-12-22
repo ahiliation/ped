@@ -104,7 +104,7 @@ if (Plymouth.GetMode () == "shutdown")
 {
 
 # Load the image of a background
-shut_image = Image("newbg.png");
+shut_image = Image("shut/newbg.png");
 
 # Create a sprite of the background
 background_sprite = Sprite(shut_image);
