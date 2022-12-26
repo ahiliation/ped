@@ -1,4 +1,4 @@
---- This is a plymouth theme for debian operating system
+_This is a plymouth theme for debian operating system_
 
 #### user running "sudo" should have sufficient privilege related
 
