@@ -1,4 +1,4 @@
-## This is a plymouth theme for debian operating system
+### `This is a plymouth theme for debian operating system`
 
 steps(user running should have sufficient privilege related) :
 
