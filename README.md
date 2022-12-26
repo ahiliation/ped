@@ -2,8 +2,9 @@
 
 steps(user running should have sufficient privilege related) :
 
-      1.> cd /usr/share/plymouth/themes
-      2.> sudo git clone https://github.com/ahiliation/valavil.git
-      3.> sudo plymouth-set-default-theme -R valavil
-      4. reboot the system.
+      > cd /usr/share/plymouth/themes
+      > sudo git clone https://github.com/ahiliation/valavil.git
+      > sudo plymouth-set-default-theme -R valavil
+
+      reboot the system.
 
