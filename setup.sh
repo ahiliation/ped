@@ -12,5 +12,6 @@ if test -d "valavil"; then
 ```sudo git clone https://github.com/ahiliation/valavil.git
 ```sudo plymouth-set-default-theme -R valavil
 else
-    sudo git clone https://github.com/ahiliation/valavil.git                                                                                 sudo    sudo plymouth-set-default-theme -R valavil
+    sudo git clone https://github.com/ahiliation/valavil.git
+    sudo plymouth-set-default-theme -R valavil
 fi
