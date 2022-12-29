@@ -8,3 +8,6 @@ _This is a plymouth theme for debian operating system_
 
       reboot the system.
 
+  Shell script  for installation_
+
+  <space>.<space>  setup.sh
