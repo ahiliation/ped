@@ -6,11 +6,11 @@ FILE=/etc/resolv.conf
 
 if test -d "valavil"; then
     echo "directory  exists.\n"
-    echo "Going to make backup...\n"
-    mv "valavil" "valavil.backup"
-    echo "done. \n"
+    echo "Going to make backup..."
+    sudo mv "valavil" "valavil.backup"
+    echo "done."
 fi
 
 sudo git clone https://github.com/ahiliation/valavil.git
 sudo plymouth-set-default-theme -R valavil
-
+cd -
